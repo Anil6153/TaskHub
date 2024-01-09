@@ -40,12 +40,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
         holder.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCompletionDialog(holder.getAdapterPosition());
+                showCompletionDialog(holder.getAdapterPosition(),holder);
             }
         });
     }
 
-    private void showCompletionDialog(final int position) {
+    private void showCompletionDialog(final int position,TaskViewHolder holder) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Task Completion");
         builder.setMessage("Have you completed the task?");
@@ -58,9 +58,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
                 // Remove the task from the RecyclerView
                 taskList.remove(position);
                 notifyItemRemoved(position);
-
-
-
+                holder.checkBox.setChecked(false);
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -68,6 +66,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
             public void onClick(DialogInterface dialog, int which) {
                 // Unselect the checkbox in the current holder
 //                holder.checkBox.setChecked(false);
+                holder.checkBox.setChecked(false );
             }
         });
         builder.create().show();

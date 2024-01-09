@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         tasksList = databaseHelper.getAllTasks();
         taskAdapter = new TaskAdapter(this,tasksList);
 
-
         tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         tasksRecyclerView.setAdapter(taskAdapter);
 
