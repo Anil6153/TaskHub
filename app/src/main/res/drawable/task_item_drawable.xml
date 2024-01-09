@@ -1,0 +1,6 @@
+<!-- res/drawable/task_item_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Set the background color -->
+    <corners android:radius="8dp"/> <!-- Set the corner radius for rounded corners -->
+    <stroke android:width="5dp" android:color="#CCCCCC"/> <!-- Set the border width and color -->
+</shape>

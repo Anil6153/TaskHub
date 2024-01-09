@@ -1,0 +1,14 @@
+<!-- res/drawable/spinner_arrow.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:gravity="end|center_vertical"
+            android:src="@drawable/ic_arrow"
+        android:tint="@android:color/white"/>
+    </item>
+</layer-list>

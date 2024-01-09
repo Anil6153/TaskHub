@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TaskHub</string>
+
+    <string-array name="priority_levels">
+        <item>     </item>
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+    <string-array name="category_options">
+        <item>       </item>
+        <item>Personal</item>
+        <item>Work</item>
+        <item>Study</item>
+        <!-- Add more items as needed -->
+    </string-array>
+</resources>
