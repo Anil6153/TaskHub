@@ -4,7 +4,22 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Task {
+    private boolean checked;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
     private String title;
+
+    private long id = 100;
     private String date;
     private String time;
     private String priority;

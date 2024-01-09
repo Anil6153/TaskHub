@@ -94,6 +94,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 task.setPriority(cursor.getString(cursor.getColumnIndex(COLUMN_PRIORITY)));
                 task.setCategory(cursor.getString(cursor.getColumnIndex(COLUMN_CATEGORY)));
                 task.setDescription(cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION)));
+                task.setId(Long.parseLong(cursor.getString(cursor.getColumnIndex(COLUMN_ID))));
 
                 taskList.add(task);
             } while (cursor.moveToNext());
@@ -134,4 +135,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    
+
+    private long convertDateTimeToMillis(String date, String time) {
+        // Combine date and time strings
+        String dateTimeString = date + " " + time;
+
+        // Define the date and time format
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+
+        try {
+            // Parse the combined date and time string
+            Date dateTime = dateFormat.parse(dateTimeString);
+
+            // Convert the parsed date and time to milliseconds
+            if (dateTime != null) {
+                return dateTime.getTime();
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        // Return 0 if parsing fails
+        return 0;
+    }
+
+    public void deleteTask(long taskId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(taskId)});
+        db.close();
+    }
+
 }
