@@ -39,6 +39,15 @@ Git (Optional): If you prefer cloning the repository, ensure that Git is install
 
 ## Screenshots of the App
   
-  <img src="ScreenShots/splashscreen.jpeg" width="250">
+  <img src="ScreenShots/splashscreen.jpeg" width="250"><img src="ScreenShots/mainpage.jpeg" width="250"><img src="ScreenShots/add new task.jpeg" width="250"><img src="ScreenShots/tasktitle.jpeg" width="250"><img src="ScreenShots/duedate.jpeg" width="250"><img src="ScreenShots/duetime.jpeg" width="250"><img src="ScreenShots/priority.jpeg" width="250"><img src="ScreenShots/category.jpeg" width="250"><img src="ScreenShots/addtask.jpeg" width="250"><img src="ScreenShots/addedtask.jpeg" width="250"><img src="ScreenShots/taskstatus.jpeg" width="250">
+
+
+
+
+
+
+
+
+
 
 
