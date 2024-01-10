@@ -39,6 +39,6 @@ Git (Optional): If you prefer cloning the repository, ensure that Git is install
 
 ## Screenshots of the App
   
-  <img src="C:\Users\aniln\AndroidStudioProjects\to_do\ScreenShots\splashscreen.jpeg">
+  <img src="ScreenShots\splashscreen.jpeg">
 
 
