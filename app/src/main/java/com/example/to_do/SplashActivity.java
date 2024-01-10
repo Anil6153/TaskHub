@@ -13,7 +13,7 @@ import com.example.to_do.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int SPLASH_DURATION = 2000; // Splash duration in milliseconds
+    private static final int SPLASH_DURATION = 1500; // Splash duration in milliseconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

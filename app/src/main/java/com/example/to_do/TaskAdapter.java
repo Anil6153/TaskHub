@@ -1,10 +1,15 @@
 package com.example.to_do;
 
+import static com.example.to_do.MainActivity.imageView;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -47,7 +52,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
 
     private void showCompletionDialog(final int position,TaskViewHolder holder) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Task Completion");
+        builder.setTitle("Task Status");
         builder.setMessage("Have you completed the task?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
@@ -69,6 +74,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
                 holder.checkBox.setChecked(false );
             }
         });
+
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                // Handle dialog cancellation (back button pressed)
+//                Toast.makeText(MainActivity.this, "Dialog canceled", Toast.LENGTH_SHORT).show();
+                holder.checkBox.setChecked(false);
+            }
+        });
+
+
         builder.create().show();
     }
 
@@ -85,6 +101,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
 
             // Notify the adapter that the data set has changed
             notifyDataSetChanged();
+            if(taskList.size()-1 == 0){
+                imageView.setVisibility(View.VISIBLE);
+            }
         }
     }
 

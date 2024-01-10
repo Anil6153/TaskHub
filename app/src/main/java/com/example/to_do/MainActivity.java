@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
     RecyclerView tasksRecyclerView;
+    public static ImageView imageView;
     TaskAdapter taskAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +32,17 @@ public class MainActivity extends AppCompatActivity {
         tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         tasksList = databaseHelper.getAllTasks();
         taskAdapter = new TaskAdapter(this,tasksList);
+        imageView = findViewById(R.id.imageView);
 
         tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         tasksRecyclerView.setAdapter(taskAdapter);
+
+        if(tasksList.size() == 0){
+            imageView.setVisibility(View.VISIBLE);
+        }
+        else{
+            imageView.setVisibility(View.INVISIBLE);
+        }
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,4 +52,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class Task {
     private boolean checked;
-
     public long getId() {
         return id;
     }
@@ -27,7 +26,6 @@ public class Task {
 
     private String description;
     public Task() {
-
     }
 
     public String getTitle() {
@@ -86,5 +84,4 @@ public class Task {
         this.category = category;
         this.description = description;
     }
-
 }

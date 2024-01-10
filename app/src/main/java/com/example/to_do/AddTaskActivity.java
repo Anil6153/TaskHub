@@ -149,6 +149,33 @@ public class AddTaskActivity extends AppCompatActivity {
         });
     }
 
+//    private void showDatePickerDialog() {
+//        // Get current date
+//        Calendar calendar = Calendar.getInstance();
+//        int year = calendar.get(Calendar.YEAR);
+//        int month = calendar.get(Calendar.MONTH);
+//        int day = calendar.get(Calendar.DAY_OF_MONTH);
+//
+//        // Create a DatePickerDialog
+//        DatePickerDialog datePickerDialog = new DatePickerDialog(
+//                this,
+//                new DatePickerDialog.OnDateSetListener() {
+//                    @Override
+//                    public void onDateSet(DatePicker view, int selectedYear, int selectedMonth, int selectedDay) {
+//                        // Update the EditText with the selected date
+//                        String selectedDate = selectedYear + "-" + (selectedMonth + 1) + "-" + selectedDay;
+//
+//                        Drawable drawable = getResources().getDrawable(R.drawable.calender);
+//                        setDateEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.calender, 0);
+//                        setDateEditText.setText(selectedDate);
+//                    }
+//                },
+//                year, month, day);
+//
+//        // Show the dialog
+//        datePickerDialog.show();
+//    }
+
     private void showDatePickerDialog() {
         // Get current date
         Calendar calendar = Calendar.getInstance();
@@ -172,9 +199,19 @@ public class AddTaskActivity extends AppCompatActivity {
                 },
                 year, month, day);
 
+        // Set the minimum date to today
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+
+        // Set the maximum date to a future date if needed
+        // For example, to allow dates up to one week in the future:
+        Calendar maxDate = Calendar.getInstance();
+        maxDate.add(Calendar.DAY_OF_MONTH, 5000);
+        datePickerDialog.getDatePicker().setMaxDate(maxDate.getTimeInMillis());
+
         // Show the dialog
         datePickerDialog.show();
     }
+
 
     private void showTimePickerDialog() {
         // Get current time

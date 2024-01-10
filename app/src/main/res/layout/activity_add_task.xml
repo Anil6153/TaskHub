@@ -62,9 +62,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="Set Date"
         android:focusable="false"
-        android:drawableEnd="@drawable/calender " />
+        android:drawableEnd="@drawable/calender" />
 
 
 
@@ -75,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="Set Time"
         android:focusable="false"
         android:drawableEnd="@drawable/clock" />
